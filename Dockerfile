@@ -5,6 +5,8 @@ ENV BUILD_VERSION="V1"
 
 USER root
 
+ENV CLOUDANT_URL $CLOUDANT_URL
+
 # Updates S.O. and adds system required packages
 RUN apt-get update && apt-get install -qy wget git tar libraspberrypi-bin \
     && rm -rf /var/lib/apt/lists/*

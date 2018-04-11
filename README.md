@@ -1,5 +1,5 @@
 # Security Camera Docker container - Includes Motion Detection and Live streaming
-![Docker & Raspberry Pi](/images/docker+rpi.png)
+![Docker & Raspberry Pi](/assets/images/docker+rpi.png)
 
 ## Pre-Install
 ### Make sure that the Pi Camera is accessable true /dev/video0 after a reboot

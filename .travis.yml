@@ -1,0 +1,19 @@
+sudo: required
+services:
+- docker
+language: bash
+script:
+# prepare qemu
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+
+# build image
+- docker build -t hukam/security-camera .
+# push image
+- >
+  if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+    TAG=$(grep "ENV BUILD_VERSION" Dockerfile | awk 'NF>1{print $NF}')
+    docker tag hukam/security-camera hukam/security-camera:$BUILD_VERSION
+    docker push hukam/security-camera:$BUILD_VERSION
+    docker push hukam/security-camera
+  fi

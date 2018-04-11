@@ -32,7 +32,7 @@ RUN chmod 755 /usr/src/app/build.sh
 
 RUN /usr/src/app/build.sh
 
-ENTRYPOINT ["/bin/bash"]
-CMD ["/bin/bash"]
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+CMD []
 
 EXPOSE 90 9091

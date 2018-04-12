@@ -13,7 +13,8 @@ if [ "$ACTION" == "motion" ]; then
     if [ -z "$PID" ]; then
       echo "raspivid process is not running"
     else
-      kill -9 $PID
+      # kill -9 $PID
+      pkill raspivid
       echo "raspivid process killed forcefully, process id $PID."
     fi
    motion

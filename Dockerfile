@@ -11,13 +11,13 @@ RUN apt-get update && apt-get install -qy wget git tar libraspberrypi-bin \
 
 # Create a directory where our app will be placed
 RUN mkdir -p /usr/src/app
-RUN mkdir -p /usr/src/app/assets
 
 #Change directory so that our commands run inside this new directory
 WORKDIR /usr/src/app
 
 COPY entrypoint.sh /usr/src/app
 COPY build.sh /usr/src/app
+RUN mkdir /usr/src/app/assets
 COPY assets/motion.conf /usr/src/app/assets
 COPY assets/motion /usr/src/app/assets
 

@@ -21,7 +21,7 @@ This should take a picture. If you get an error here, enter the following comman
 
 START CONTAINER (motion detection as default action)
 
-`docker run --privileged -it -d --name camera -p 9090:9090 -p 9091:9091 -v /tmp:/tmp --device=/dev/video0 hukam/security-camera motion`
+`docker run --privileged -it -d --name camera -p 80:9090 -p 8081:9091 -v /tmp:/tmp --device=/dev/video0 hukam/security-camera motion`
 
 After the initial start use below command for running container to stream Live feed on Youtube:
 `docker exec -it -d camera bash entrypoint.sh live xxxx-xxxx-xxxx-xxxx`

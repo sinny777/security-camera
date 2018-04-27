@@ -17,6 +17,7 @@ WORKDIR /usr/src/app
 
 COPY entrypoint.sh /usr/src/app
 COPY build.sh /usr/src/app
+COPY motion_detected.sh /usr/src/app
 RUN mkdir /usr/src/app/assets
 COPY assets/motion.conf /usr/src/app/assets
 COPY assets/motion /usr/src/app/assets
@@ -29,6 +30,7 @@ RUN sudo chmod 755 -R /tmp/motion
 
 RUN chmod 755 /usr/src/app/entrypoint.sh
 RUN chmod 755 /usr/src/app/build.sh
+RUN chmod 755 /usr/src/app/motion_detected.sh
 
 RUN /usr/src/app/build.sh
 

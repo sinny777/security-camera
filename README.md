@@ -29,6 +29,9 @@ After the initial start use below command for running container to stream Live f
 After the initial start use below command for running container as motion detection:
 `docker exec -it -d camera bash entrypoint.sh motion`
 
+To Open a command prompt inside CONTAINER
+`docker exec -it -d camera bash`
+
 TO STOP CONTAINER
 
 `docker stop camera`

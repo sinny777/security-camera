@@ -21,6 +21,7 @@ COPY motion_detected.sh /usr/src/app
 RUN mkdir /usr/src/app/assets
 COPY assets/motion.conf /usr/src/app/assets
 COPY assets/motion /usr/src/app/assets
+COPY ngrok-stable-linux-amd64.zip /usr/src/app
 
 RUN mkdir /tmp/motion
 RUN mkdir /tmp/motion/cam1

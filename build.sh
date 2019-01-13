@@ -4,7 +4,7 @@ function install_build_tools {
   apt-get update
   # Install packages
   apt-get -y install libavcodec-dev libavcodec0d libavformat-dev libavformat0d
-  apt-get install -y wget tar nano motion libjpeg62
+  apt-get install -y wget tar unzip nano motion libjpeg62
 }
 
 function build_motion {
@@ -19,6 +19,11 @@ function build_motion {
 
   # Copy motion config file
   cp /usr/src/app/assets/motion.conf /etc/motion/
+
+}
+
+function start_ngrok {
+  unzip /usr/src/app/ngrok-stable-linux-amd64.zip
 }
 
 /**
@@ -111,6 +116,7 @@ function build_psips {
 
 install_build_tools
 build_motion
+start_ngrok
 # build_yasm
 # build_h264
 # build_lame
